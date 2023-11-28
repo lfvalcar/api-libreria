@@ -6,7 +6,9 @@ export class Autore {
     @PrimaryGeneratedColumn()
     id: string;
 
-    @Column('text',{unique: true})
+    @Column('text',{
+        nullable: false
+    })
     nombre: string;
 
 }

@@ -1,13 +1,13 @@
 import { Injectable } from '@nestjs/common';
 import { CreateSeedDto } from './dto/create-seed.dto';
 import { UpdateSeedDto } from './dto/update-seed.dto';
-//servicios
+// Servicios
 import { AutoresService } from '../autores/autores.service';
 import { LibrosService } from '../libros/libros.service';
-//archivos json
+// Archivos JSON
 import * as seedAutores from '../seed/data/authors.json';
 import * as seedLibros from '../seed/data/libros.json';
-//interfaces
+// Dtos
 import { CreateLibroDto } from '../libros/dto/create-libro.dto'
 import { CreateAutoreDto } from '../autores/dto/create-autore.dto';
 
@@ -15,12 +15,14 @@ import { CreateAutoreDto } from '../autores/dto/create-autore.dto';
 export class SeedService {
   constructor (private readonly autoreService: AutoresService,private readonly librosService: LibrosService){}
 
-  public loadData(){
-    this.insertNewAutores();
-    this.insertNewLibros();
+  public async loadData(){
+    await this.insertNewLibros();
+    await this.insertNewAutores();
   }
 
   private async insertNewAutores(){
+    await this.autoreService.deleteAllAutores();
+
     const insertPromisesAutores = [];
     seedAutores.forEach( (autor: CreateAutoreDto) => {
       insertPromisesAutores.push(this.autoreService.create(autor));
@@ -30,6 +32,8 @@ export class SeedService {
 }
 
   private async insertNewLibros(){
+    await this.librosService.deleteAllLibros();
+
     const insertPromisesLibros = [];
     seedLibros.forEach( (libro: CreateLibroDto) => {
       insertPromisesLibros.push(this.librosService.create(libro));

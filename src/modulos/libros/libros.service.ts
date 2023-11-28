@@ -42,4 +42,16 @@ export class LibrosService {
   remove(id: number) {
     return `This action removes a #${id} libro`;
   }
+
+  async deleteAllLibros(){
+    const query = this.libroRepository.createQueryBuilder('libro');
+    try{
+      return await query 
+        .delete()
+        .where({})
+        .execute()
+    }catch(error){
+      throw new InternalServerErrorException('Pongase en contacto con el Sysadmin')
+    }
+  }
 }

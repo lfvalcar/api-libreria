@@ -1,5 +1,4 @@
 import { BeforeInsert, BeforeUpdate, Column, Entity, PrimaryColumn } from "typeorm";
-import { Url } from "url";
 
 
 @Entity()
@@ -17,20 +16,29 @@ export class Libro {
     })
     isbn: string;
 
-    @Column('numeric',{
+    @Column('int',{
         nullable: false
     })
     pageCount: number;
 
-    publishedDate: Date;
+    @Column('text',{
+        nullable: true
+    })
+    publishedDate: string;
 
     @Column('text',{
-        nullable: false
+        nullable: true
     })
-    thumbnailUrl: Url;
+    thumbnailUrl: string;
 
+    @Column('text',{
+        nullable: true
+    })
     shortDescription: string;
 
+    @Column('text',{
+        nullable: true
+    })
     longDescription: string;
 
     @Column('text',{
@@ -41,8 +49,7 @@ export class Libro {
     @Column('numeric',{
         nullable: false
     })
-    precio: number
-
+    precio: number;
 
     
 }

@@ -53,6 +53,14 @@ export class AutoresService {
   }
 
   async deleteAllAutores(){
-    const query = this.autorRepository.createQueryBuilder('autor')
+    const query = this.autorRepository.createQueryBuilder('autor');
+    try{
+      return await query 
+        .delete()
+        .where({})
+        .execute()
+    }catch(error){
+      throw new InternalServerErrorException('Pongase en contacto con el Sysadmin')
+    }
   }
 }
