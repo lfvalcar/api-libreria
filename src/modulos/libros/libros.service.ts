@@ -4,18 +4,23 @@ import { UpdateLibroDto } from './dto/update-libro.dto';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { Libro } from './entities/libro.entity';
+import { AutoresService } from '../autores/autores.service';
 
 @Injectable()
 export class LibrosService {
   constructor(
     @InjectRepository(Libro)
-    private readonly libroRepository: Repository<Libro>
+    private readonly libroRepository: Repository<Libro>,
+    private readonly AutoresService: AutoresService
   ){}
 
   @Post()
   async create(createLibroDto: CreateLibroDto) {
     try {
+      const {autor, ...campos} = createLibroDto;
       const libro = this.libroRepository.create(createLibroDto);
+      const autorobj = await this.AutoresService.findOne(autor);
+      libro.autor = autorobj;
       await this.libroRepository.save(libro);
       return {
         msg: 'Registro Insertado',

@@ -1,4 +1,5 @@
-import { BeforeInsert, BeforeUpdate, Column, Entity, PrimaryColumn } from "typeorm";
+import { Autore } from "src/modulos/autores/entities/autore.entity";
+import { Column, Entity, ManyToOne, PrimaryColumn } from "typeorm";
 
 
 @Entity()
@@ -51,5 +52,11 @@ export class Libro {
     })
     precio: number;
 
+    @ManyToOne (
+        () => Autore,
+        (autor) => autor.libros,
+        {cascade: true}
+    )
+    autor?: Autore[]
     
 }

@@ -2,9 +2,7 @@
 /dist
 /node_modules
 
-deploy
-
-#variable de entorno
+# Variable de entorno
 .env
 
 # Logs
