@@ -11,7 +11,6 @@ import { LibrosModule } from './modulos/libros/libros.module';
 @Module({
   imports: [
     ConfigModule.forRoot(),
-    SeedModule,
     TypeOrmModule.forRoot({
       type: 'postgres',
       host: process.env.DB_HOST,

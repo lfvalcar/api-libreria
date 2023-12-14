@@ -1,4 +1,4 @@
-import { Injectable, InternalServerErrorException, Post } from '@nestjs/common';
+import { Injectable, InternalServerErrorException} from '@nestjs/common';
 import { CreateLibroDto } from './dto/create-libro.dto';
 import { UpdateLibroDto } from './dto/update-libro.dto';
 import { InjectRepository } from '@nestjs/typeorm';

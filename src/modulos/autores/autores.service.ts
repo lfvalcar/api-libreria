@@ -10,9 +10,7 @@ export class AutoresService {
   constructor(
     @InjectRepository(Autore)
     private readonly autorRepository: Repository<Autore>
-  ){
-
-  }
+  ){}
 
   @Post()
   async create(createAutoreDto: CreateAutoreDto) {
