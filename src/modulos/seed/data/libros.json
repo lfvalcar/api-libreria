@@ -1,8 +1,8 @@
 [
     {
-      "id": "1",
+      "isbn": "1111111111111",
       "title": "MongoDB in Action",
-      "isbn": "1935182870",
+      "autor": "456563234X",
       "pageCount": 120,
       "publishedDate": "2011-12-12T00:00:00.000-08",
       "thumbnailUrl": "https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/banker.jpg",
@@ -12,9 +12,9 @@
       "precio":100
     },
     {
-      "id": "2",
+      "isbn": "2222222222222",
       "title": "Distributed Application Development with PowerBuilder 6.0",
-      "isbn": "1884777686",
+      "autor": "42956434Y",
       "pageCount": 504,
       "publishedDate": "1998-06-01T00:00:00.000-07",
       "longDescription": "Distributed Application Development with PowerBuilder 6.0 is a vital source for the PowerBuilder programmer; it provides the sort of detailed coverage of Distributed PowerBuilder that you can find nowwhere else.    The book opens with a discussion of distributed computing in general, as well as its design principles and technologies. Then Distributed PowerBuilder is examined in detail. By building a simple application step by step, the author discusses all of the concepts and components needed for building a PowerBuilder application and shows how to make the application available over a network.    Finally, the author explores how PowerBuilder can be used in distributed solutions both with and without using DPB.    Distributed Application Development with PowerBuilder 6.0 is for any PowerBuilder developer looking for information on distributed computing options with the PowerBuilder environment. IS managers, system architects, and developers using many different technologies can learn how PowerBuilder can be used as all or part of the solution for building distributed applications.    The main topic of this book is Distributed PowerBuilder (DPB). It covers the basics of building a DPB application and walks through each new feature with examples including the Shared object, DataWindow synchronization, Server Push and Web.PB. It also explains distributed computing technologies and design principles so that your application can be built to handle the stresses of a distributed environment.  ",
@@ -22,9 +22,9 @@
       "precio":100
     },
     {
-      "id": "3",
+      "isbn": "3333333333333",
       "title": "Grails in Action",
-      "isbn": "1933988932",
+      "autor": "34561812Z",
       "pageCount": 520,
       "publishedDate": "2009-05-01T00:00:00.000-07",
       "thumbnailUrl": "https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/gsmith.jpg",
@@ -34,9 +34,9 @@
       "precio":100
     },
     {
-      "id": "4",
+      "isbn": "4444444444444",
       "title": "Hadoop in Practice, Second Edition",
-      "isbn": "1617292222",
+      "autor": "72345678H",
       "pageCount": 134,
       "thumbnailUrl": "https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/holmes2.jpg",
       "status": "UNPUBLISH",
@@ -44,9 +44,9 @@
 
     },
     {
-      "id": "5",
+      "isbn": "5555555555555",
       "title": "Oculus Rift in Action",
-      "isbn": "1617292192",
+      "autor": "456523234J",
       "pageCount": 345,
       "thumbnailUrl": "https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/bdavis.jpg",
       "status": "UNPUBLISH",
@@ -54,9 +54,9 @@
 
     },
     {
-      "id": "6",
+      "isbn": "6666666666666",
       "title": "OpenStack in Action",
-      "isbn": "1617292168",
+      "autor": "42056434L",
       "pageCount": 456,
       "publishedDate": "2019-05-01T00:00:00.000-07",
       "thumbnailUrl": "https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/bumgardner.jpg",
@@ -65,9 +65,9 @@
 
     },
     {
-      "id": "7",
+      "isbn": "7777777777777",
       "title": "PowerShell in Depth, Second Edition",
-      "isbn": "1617292184",
+      "autor": "34467813S",
       "pageCount": 90,
       "publishedDate": "2018-10-01T00:00:00.000-07",
       "thumbnailUrl": "https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/jones6.jpg",
@@ -75,9 +75,9 @@
       "precio":100
     },
     {
-      "id": "8",
+      "isbn": "8888888888888",
       "title": "Practical Probabilistic Programming",
-      "isbn": "1617292338",
+      "autor": "10355698D",
       "pageCount": 200,
       "thumbnailUrl": "https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/pfeffer.jpg",
       "status": "UNPUBLISH",
@@ -85,9 +85,9 @@
 
     },
     {
-      "id": "9",
+      "isbn": "9999999999999",
       "title": "Unity in Action",
-      "isbn": "161729232X",
+      "autor": "456563234X",
       "pageCount": 300,
       "publishedDate": "2015-01-01T00:00:00.000-07",
       "thumbnailUrl": "https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/hocking.jpg",
@@ -96,9 +96,9 @@
 
     },
     {
-      "id": "10",
+      "isbn": "1000000000000",
       "title": "Express.js in Action",
-      "isbn": "1617292427",
+      "autor": "42956434Y",
       "pageCount": 250,
       "thumbnailUrl": "https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/hahn.jpg",
       "status": "UNPUBLISH",
@@ -106,9 +106,9 @@
 
     },
     {
-      "id": "11",
+      "isbn": "1111111111110",
       "title": "Learn Git in a Month of Lunches",
-      "isbn": "1617292419",
+      "autor": "34561812Z",
       "pageCount": 100,
       "publishedDate": "2021-07-01T00:00:00.000-07",
       "thumbnailUrl": "https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/umali.jpg",
@@ -117,9 +117,9 @@
 
     },
     {
-      "id": "12",
+      "isbn": "1222222222222",
       "title": "Understanding SPAs",
-      "isbn": "1617292435",
+      "autor": "72345678H",
       "pageCount": 80,
       "thumbnailUrl": "https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/scott2.jpg",
       "status": "UNPUBLISH",

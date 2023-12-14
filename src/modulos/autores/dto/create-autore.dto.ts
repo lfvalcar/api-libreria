@@ -3,9 +3,11 @@ import { IsString, MinLength} from "class-validator";
 export class CreateAutoreDto {
 
     @IsString()
-    id: string;
+    @MinLength(1)
+    nif: string;
 
     @IsString()
+    @MinLength(10)
     nombre: string;
 
 }

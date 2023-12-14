@@ -17,14 +17,14 @@ export class AutoresService {
   @Post()
   async create(createAutoreDto: CreateAutoreDto) {
     try {
-      //el objeto (createAutoreDto) del controlador  
-      //lo PREPARA en el objeto (autor) para ser INSERTADO en el SGBD
+      // El objeto (createAutoreDto) del controlador  
+      // Lo PREPARA en el objeto (autor) para ser INSERTADO en el SGBD
       const autor = this.autorRepository.create(createAutoreDto);
 
-      //lanza la petición de insercción a la BD
-      //mapea objeto autor <--> registro autor
-      //Genera la consulta sql insert into Autor (id, nombre) values ("1","Glen Smidth");
-      //lo aplica la libreria de bd instalada en el proyecto --> libreria de postgres (pg)
+      // Lanza la petición de insercción a la BD
+      // Mapea objeto autor <--> registro autor
+      // Genera la consulta sql insert into Autor (id, nombre) values ("1","Glen Smidth");
+      // Lo aplica la libreria de bd instalada en el proyecto --> libreria de postgres (pg)
       await this.autorRepository.save(autor);
       return {
         msg: 'Registro Insertado',
@@ -40,8 +40,13 @@ export class AutoresService {
     return `This action returns all autores`;
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} autore`;
+  findOne(nif: string) {
+    const autor = this.autorRepository.findOne({
+      where:{
+        nif
+      }
+    });
+    return autor;
   }
 
   update(id: number, updateAutoreDto: UpdateAutoreDto) {

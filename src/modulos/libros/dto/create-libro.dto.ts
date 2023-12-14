@@ -1,23 +1,46 @@
-import { IsInt, IsPositive, IsString, MaxLength, MinLength } from "class-validator"
+import { IsIn, IsInt, IsNumber, IsOptional, IsPositive, IsString, Length, MaxLength, MinLength } from "class-validator"
 
 export class CreateLibroDto {
-    id: string;
 
-    title: string
-
+    @IsString()
+    @Length(13)
     isbn: string
 
+    @IsString()
+    @MinLength(3)
+    title: string
+
+    @IsPositive()
+    @IsNumber()
     pageCount: number
 
-    publishedDate: string
-    
-    thumbnailUrl: string 
-    
-    shortDescription: string
+    @IsPositive()
+    @IsNumber()
+    precio: number
 
-    longDescription: string 
+    @IsString()
+    publishedDate?: string
+    
+    @IsString()
+    @IsOptional()
+    thumbnailUrl?: string 
+    
+    @IsString()
+    @IsOptional()
+    shortDescription?: string
 
+    @IsString()
+    @IsOptional()
+    longDescription?: string 
+
+    @IsString()
+    @MinLength(1)
+    @IsIn(['PUBLISH','UNPUBLISH'])
     status: string 
 
-    precio: number
+    // Foráneas
+    @IsString()
+    @MinLength(3)
+    autor?: string
+
 }

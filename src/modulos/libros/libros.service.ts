@@ -10,18 +10,17 @@ import { AutoresService } from '../autores/autores.service';
 export class LibrosService {
   constructor(
     @InjectRepository(Libro)
-    private readonly libroRepository: Repository<Libro>,
+    private readonly librosRepository: Repository<Libro>,
     private readonly AutoresService: AutoresService
   ){}
 
-  @Post()
   async create(createLibroDto: CreateLibroDto) {
     try {
       const {autor, ...campos} = createLibroDto;
-      const libro = this.libroRepository.create(createLibroDto);
+      const libro = this.librosRepository.create({...campos});
       const autorobj = await this.AutoresService.findOne(autor);
       libro.autor = autorobj;
-      await this.libroRepository.save(libro);
+      await this.librosRepository.save(libro);
       return {
         msg: 'Registro Insertado',
         data: libro,
@@ -36,8 +35,16 @@ export class LibrosService {
     return `This action returns all libros`;
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} libro`;
+  findOne(isbn: string) {
+    const autor = this.librosRepository.findOne({
+      where:{
+        isbn
+      },
+      relations: {
+        autor: true
+      }
+    });
+    return autor;
   }
 
   update(id: number, updateLibroDto: UpdateLibroDto) {
@@ -49,7 +56,7 @@ export class LibrosService {
   }
 
   async deleteAllLibros(){
-    const query = this.libroRepository.createQueryBuilder('libro');
+    const query = this.librosRepository.createQueryBuilder('libro');
     try{
       return await query 
         .delete()

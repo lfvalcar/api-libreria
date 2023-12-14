@@ -18,8 +18,8 @@ export class LibrosController {
   }
 
   @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.librosService.findOne(+id);
+  findOne(@Param('id') isbn: string) {
+    return this.librosService.findOne(isbn);
   }
 
   @Patch(':id')

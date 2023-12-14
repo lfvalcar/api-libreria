@@ -1,17 +1,17 @@
 version: '3.8'
 services:
   bdpostgres:
-    container_name: bdpicasso
+    container_name: bdlibreria
     image: postgres
     restart: always
     environment:
-      - POSTGRES_USER=${DB_USERNAME}
-      - POSTGRES_PASSWORD=${DB_PASSWORD}
-      - POSTGRES_DB=${DB_NAME}
+      - POSTGRES_USER=$DB_USERNAME
+      - POSTGRES_PASSWORD=$DB_PASSWORD
+      - POSTGRES_DB=$DB_NAME
     ports:
-      - "${DB_PORT}:${DB_PORT}"
+      - "${DB_PORT}:$DB_PORT"
     volumes:
-      - picassobd:/var/lib/postgresql/data
+      - bdlibreria:/var/lib/postgresql/data
 volumes:
-  picassobd:
+  bdlibreria:
     external: true  

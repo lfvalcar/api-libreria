@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, InternalServerErrorException } from '@nestjs/common';
 import { CreateSeedDto } from './dto/create-seed.dto';
 import { UpdateSeedDto } from './dto/update-seed.dto';
 // Servicios
@@ -21,25 +21,44 @@ export class SeedService {
   }
 
   private async insertNewAutores(){
+  try{
+    // Borrado masivo de autores
     await this.autoreService.deleteAllAutores();
 
     const insertPromisesAutores = [];
     seedAutores.forEach( (autor: CreateAutoreDto) => {
+      // if (+autor.id > 30)
       insertPromisesAutores.push(this.autoreService.create(autor));
-  });
-  const results = await Promise.all(insertPromisesAutores);
-  return true;
+    });
+    const results = await Promise.all(insertPromisesAutores);
+    return {
+      msg: 'Load Data de autores ejecutado con éxito',
+      data: insertPromisesAutores,
+      status: 200
+    }
+    }catch(error){
+      throw new InternalServerErrorException('Pongase en contacto con el Sysadmin')
+  }
 }
 
   private async insertNewLibros(){
-    await this.librosService.deleteAllLibros();
+    try{
+      // Borrado masivo de libros
+      await this.librosService.deleteAllLibros();
 
-    const insertPromisesLibros = [];
-    seedLibros.forEach( (libro: CreateLibroDto) => {
-      insertPromisesLibros.push(this.librosService.create(libro));
-    });
-    const results = await Promise.all(insertPromisesLibros);
-    return true;
+      const insertPromisesLibros = [];
+      seedLibros.forEach( (libro: CreateLibroDto) => {
+        insertPromisesLibros.push(this.librosService.create(libro));
+      });
+      const results = await Promise.all(insertPromisesLibros);
+      return {
+        msg: 'Load Data de libros ejecutado con éxito',
+        data: insertPromisesLibros,
+        status: 200
+      }
+      }catch(error){
+        throw new InternalServerErrorException('Pongase en contacto con el Sysadmin')
+    }
   }
 
   create(createSeedDto: CreateSeedDto) {

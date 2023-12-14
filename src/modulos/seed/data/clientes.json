@@ -1,7 +1,7 @@
 [
     {
       "nombre": "Jose Antonio",
-      "nif": "456563434R",
+      "nif": "456563434A",
       "apellidos": "Morgado",
       "direccion": "c/La pepa",
       "ciudad": "Almeria",
@@ -9,7 +9,7 @@
     },
     {
       "nombre": "Ana",
-      "nif": "42356434R",
+      "nif": "42356434B",
       "apellidos": "Martinez",
       "direccion": "c/Pepito de los palotes n2",
       "ciudad": "Madrid",
@@ -17,7 +17,7 @@
     },
     {
       "nombre": "Pedro",
-      "nif": "34567812",
+      "nif": "34567812C",
       "apellidos": "Montes",
       "direccion": "c/Pepito de los palotes n2",
       "ciudad": "Sevilla",
@@ -25,7 +25,7 @@
     },
     {
       "nombre": "Maria",
-      "nif": "12345678U",
+      "nif": "12345678D",
       "apellidos": "Sanchez",
       "direccion": "c/Pepito de los palotes n2",
       "ciudad": "Salamanca",

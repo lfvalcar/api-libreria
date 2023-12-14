@@ -1,20 +1,22 @@
 import { Libro } from "src/modulos/libros/entities/libro.entity";
-import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, OneToMany, PrimaryColumn } from "typeorm";
 
 @Entity()
 export class Autore {
-
-    @PrimaryGeneratedColumn()
-    id: string;
+// Entidades
+    @PrimaryColumn()
+    nif: string;
 
     @Column('text',{
-        nullable: false
+        unique: true,
     })
     nombre: string;
 
+// Relaciones
     @OneToMany (
         () => Libro,
-        (libro) => libro.autor
+        (libro) => libro.autor,
+        { eager: true }
     )
     libros?: Libro[]
 }

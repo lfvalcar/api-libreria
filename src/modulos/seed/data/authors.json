@@ -1,35 +1,35 @@
 
 [
   {
-    "id": "1",
+    "nif": "456563234X",
     "nombre": "Glen Smith"
   },
   {
-    "id": "2",
+    "nif": "42956434Y",
     "nombre": "Peter Ledbrook"
   },
   {
-    "id": "3",
+    "nif": "34561812Z",
     "nombre": "Kyle Banker"
   },
   {
-    "id": "4",
+    "nif": "72345678H",
     "nombre": "Michael J. Barlotta"
   },
   {
-    "id": "5",
+    "nif": "456523234J",
     "nombre": "Alex Holmes"
   },
   {
-    "id": "6",
+    "nif": "42056434L",
     "nombre": "Bradley Austin Davis"
   },
   {
-    "id": "7",
+    "nif": "34467813S",
     "nombre": "Karen Bryla"
   },
   {
-    "id": "8",
+    "nif": "10355698D",
     "nombre": "Alex Benton"
   }
 ]
