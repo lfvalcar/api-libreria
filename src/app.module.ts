@@ -7,6 +7,8 @@ import { SeedModule } from './modulos/seed/seed.module';
 import { AutoresModule } from './modulos/autores/autores.module';
 import { ClientesModule } from './modulos/clientes/clientes.module';
 import { LibrosModule } from './modulos/libros/libros.module';
+import { AuthModule } from './modulos/auth/auth.module';
+import { UserModule } from './modulos/user/user.module';
 
 @Module({
   imports: [
@@ -24,7 +26,9 @@ import { LibrosModule } from './modulos/libros/libros.module';
     SeedModule,
     AutoresModule,
     ClientesModule,
-    LibrosModule
+    LibrosModule,
+    AuthModule,
+    UserModule
   ],
   controllers: [AppController],
   providers: [AppService],
