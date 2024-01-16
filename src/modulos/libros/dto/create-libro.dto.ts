@@ -40,7 +40,7 @@ export class CreateLibroDto {
 
     // Foráneas
     @IsString()
-    @MinLength(3)
+    @MinLength(1)
     autor?: string
 
 }

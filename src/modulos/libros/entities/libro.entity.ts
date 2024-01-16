@@ -56,11 +56,17 @@ export class Libro {
         (autor) => autor.libros,
         {cascade: true}
     )
-    autor?: Autore[]
+    autor?: Autore
 
     @BeforeInsert()
     checkTitle(){
         this.title = this.title.toUpperCase()
     }
+
+    @BeforeInsert()
+    precioIva(){
+        this.precio = this.precio*1.21;
+    }
+
     
 }

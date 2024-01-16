@@ -1,8 +1,15 @@
 import { Injectable } from '@nestjs/common';
-import { CreateAuthDto } from './dto/create-auth.dto';
-import { UpdateAuthDto } from './dto/update-auth.dto';
+import { UserRepository } from '../user/entities/user.repository';
+import { RegisterAuthDto } from './dto/register.dto';
+import { LoginAuthDto } from './dto/login.dto';
 
 @Injectable()
 export class AuthService {
-  
+  constructor(private readonly userRepository: UserRepository){}
+
+  async register(RegisterAuthDto: RegisterAuthDto){
+  }
+
+  async login(LoginAuthDto: LoginAuthDto){
+  }
 }
