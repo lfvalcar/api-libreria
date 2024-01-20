@@ -1,18 +1,22 @@
 version: '3.8'
+
 services:
+
   bdpostgres:
     container_name: bdlibreria
     env_file:
       - .env
     image: postgres
+    restart: always
     environment:
       - POSTGRES_USER=$DB_USERNAME
       - POSTGRES_PASSWORD=$DB_PASSWORD
       - POSTGRES_DB=$DB_NAME
     ports:
-      - "${DB_PORT}:$DB_PORT"
+      - $DB_PORT:$DB_PORT
     volumes:
       - bdlibreria:/var/lib/postgresql/data
+      
 volumes:
   bdlibreria:
     external: true  

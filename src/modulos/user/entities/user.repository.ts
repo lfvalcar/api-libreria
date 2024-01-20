@@ -23,4 +23,20 @@ export class UserRepository extends Repository<User>{
             throw new InternalServerErrorException('Error al buscar el email');
         }
     }
+
+    async findByUsername(username: string){
+        try{
+            return await this.createQueryBuilder('USERS')
+            .where(`username = :value`, {value: username})
+            .getOne()
+            /*
+                select *
+                from USERS
+                where username = $username
+                limit = 1
+            */
+        }catch (error){
+            throw new InternalServerErrorException('Error al buscar el usuario');
+        }
+    }
 }
