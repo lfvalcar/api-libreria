@@ -4,43 +4,43 @@ export class CreateLibroDto {
 
     @IsString()
     @Length(13)
-    isbn: string
+    isbn: string;
 
     @IsString()
     @MinLength(3)
-    title: string
+    title: string;
 
     @IsPositive()
     @IsNumber()
-    pageCount: number
+    pageCount: number;
 
     @IsPositive()
     @IsNumber()
-    precio: number
+    precio: number;
 
     @IsString()
-    publishedDate?: string
+    publishedDate?: string;
     
     @IsString()
     @IsOptional()
-    thumbnailUrl?: string 
+    thumbnailUrl?: string;
     
     @IsString()
     @IsOptional()
-    shortDescription?: string
+    shortDescription?: string;
 
     @IsString()
     @IsOptional()
-    longDescription?: string 
+    longDescription?: string;
 
     @IsString()
     @MinLength(1)
     @IsIn(['PUBLISH','UNPUBLISH'])
-    status: string 
+    status: string;
 
     // Foráneas
     @IsString()
     @MinLength(1)
-    autor?: string
+    autor?: string;
 
 }

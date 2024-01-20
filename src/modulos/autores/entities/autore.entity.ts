@@ -1,7 +1,9 @@
 import { Libro } from "src/modulos/libros/entities/libro.entity";
 import { Column, Entity, OneToMany, PrimaryColumn } from "typeorm";
 
-@Entity()
+@Entity({
+    name:"AUTORES"
+})
 export class Autore {
 // Entidades
     @PrimaryColumn()

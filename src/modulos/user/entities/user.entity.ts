@@ -20,13 +20,13 @@ export class User {
     })
     email: string;
 
-    @Column('varchar',{
-        name: 'username',
-        nullable: false,
-        unique: true, 
-        length: 150
-    })
-    username: string;
+    // @Column('varchar',{
+    //     name: 'username',
+    //     nullable: false,
+    //     unique: true, 
+    //     length: 150
+    // })
+    // username: string;
 
     @Column('varchar',{
         name: 'username',

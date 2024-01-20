@@ -2,7 +2,9 @@ import { Autore } from "src/modulos/autores/entities/autore.entity";
 import { BeforeInsert, Column, Entity, ManyToOne, PrimaryColumn } from "typeorm";
 
 
-@Entity()
+@Entity({
+    name:"LIBROS"
+})
 export class Libro {
 
     @PrimaryColumn('text', {
@@ -11,7 +13,7 @@ export class Libro {
     isbn: string;
 
     @Column('text',{
-        nullable: false
+        unique: true
     })
     title: string;
 
@@ -22,7 +24,7 @@ export class Libro {
     pageCount: number;
 
     @Column('numeric',{
-        nullable: false
+        nullable: true
     })
     precio: number;
 
@@ -50,6 +52,13 @@ export class Libro {
         nullable: false
     })
     status: string;
+
+    // @ManyToOne(
+    //     () => Cliente,
+    //     (cliente) => cliente.libros,
+    //     { cascade: false }
+    // )
+    // cliente?: Cliente
 
     @ManyToOne (
         () => Autore,

@@ -29,6 +29,4 @@ export class CreateUserDto {
     @IsDate()
     updateAt: Date;
 
-
-
 }
