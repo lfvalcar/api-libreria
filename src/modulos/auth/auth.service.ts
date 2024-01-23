@@ -2,13 +2,16 @@ import { BadRequestException, Injectable, InternalServerErrorException, NotFound
 import { UserRepository } from '../user/entities/user.repository';
 import { RegisterAuthDto } from './dto/register.dto';
 import { LoginAuthDto } from './dto/login.dto';
+import { User } from '../user/entities/user.entity';
+import { JwtService } from '@nestjs/jwt';
 import * as bcrypt from 'bcrypt';
-import { NotFoundError } from 'rxjs';
-import { runInThisContext } from 'vm';
 
 @Injectable()
 export class AuthService {
-  constructor(private readonly userRepository: UserRepository){}
+  constructor(
+    private readonly userRepository: UserRepository,
+    private readonly jwtService: JwtService
+    ){}
 
   async register(registerDto: RegisterAuthDto){
     console.log(registerDto)
@@ -28,12 +31,12 @@ export class AuthService {
     console.log('el email', registerDto.email, ' no existe en la BD');
     console.log('el usuario', registerDto.username, ' no existe en la BD');
 
-    // try{
-    //   registerDto.password = this.getHash(registerDto.password);
-    //   return this.userRepository.save(registerDto);
-    // }catch(error){
-
-    // }
+    try{
+      registerDto.password = await this.getHash(registerDto.password);
+      return this.userRepository.save(registerDto);
+    }catch(error){
+      throw new InternalServerErrorException('Erro al registrar')
+    }
 
   }
 
@@ -50,7 +53,15 @@ export class AuthService {
     }
 
     if (isValidPassword){
-      return true
+      // return 'Login sucess'
+      return {
+        msg: 'Usuario validado',
+        status: 200,
+        user: usuario,
+        token: this.getAccesToken(usuario)
+      }
+    }else{
+      return 'Login not success'
     }
   }
 
@@ -60,5 +71,28 @@ export class AuthService {
 
   async isMatch (password: string, hash: string){
     return await bcrypt.compare(password, hash)
+  }
+
+  private getAccesToken(user: User){
+    // console.log(user);
+    // console.log(proccess.env.JWT_SECRET)
+
+    try{
+      // Crea el token con los campos del user seleccionado
+      // y la configuración del jwtModule.register()
+      const accessToken = this.jwtService.sign({
+        id: user.id,
+        name: user.username,
+        email: user.email
+        // rol: user.roles[0],
+        // create: user.createdAt
+      });
+      return {
+        token: accessToken
+      }
+    }catch(error){
+      console.log(error);
+      throw new InternalServerErrorException('Error al crear el token')
+    }
   }
 }

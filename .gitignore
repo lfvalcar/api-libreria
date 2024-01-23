@@ -5,6 +5,9 @@
 # Variable de entorno
 .env
 
+# Certificados
+/certs
+
 # Logs
 logs
 *.log
