@@ -1,7 +1,8 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import { Controller, Get, Post, Body, Patch, Param, Delete, UseGuards } from '@nestjs/common';
 import { LibrosService } from './libros.service';
 import { CreateLibroDto } from './dto/create-libro.dto';
 import { UpdateLibroDto } from './dto/update-libro.dto';
+import { AuthGuard } from '@nestjs/passport';
 
 @Controller('libros')
 export class LibrosController {
@@ -9,6 +10,7 @@ export class LibrosController {
 
   
   @Post()
+  @UseGuards(AuthGuard('jwt')) // Restringimos este método con token JWT
   create(@Body() createLibroDto: CreateLibroDto) {
     return this.librosService.create(createLibroDto);
   }
@@ -24,6 +26,7 @@ export class LibrosController {
   }
 
   @Patch(':id')
+  @UseGuards(AuthGuard('jwt'))
   update(@Param('id') id: string, @Body() updateLibroDto: UpdateLibroDto) {
     return this.librosService.update(+id, updateLibroDto);
   }

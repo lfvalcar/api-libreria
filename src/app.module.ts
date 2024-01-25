@@ -9,6 +9,7 @@ import { ClientesModule } from './modulos/clientes/clientes.module';
 import { LibrosModule } from './modulos/libros/libros.module';
 import { AuthModule } from './modulos/auth/auth.module';
 import { UserModule } from './modulos/user/user.module';
+import { JwtStrategy } from './modulos/auth/strategies/jwt-strategy/jwt-strategy';
 
 @Module({
   imports: [
@@ -32,6 +33,6 @@ import { UserModule } from './modulos/user/user.module';
     UserModule
   ],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [AppService, JwtStrategy],
 })
 export class AppModule {}
