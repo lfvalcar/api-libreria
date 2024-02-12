@@ -23,14 +23,14 @@ import { JwtStrategy } from './modulos/auth/strategies/jwt-strategy/jwt-strategy
       password: process.env.DB_PASSWORD,
       autoLoadEntities: true,
       synchronize: true,
-      logging: false
+      logging: false,
     }),
     SeedModule,
     AutoresModule,
     ClientesModule,
     LibrosModule,
     AuthModule,
-    UserModule
+    UserModule,
   ],
   controllers: [AppController],
   providers: [AppService, JwtStrategy],
