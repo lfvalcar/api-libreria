@@ -5,11 +5,12 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule } from '@nestjs/config';
 import { SeedModule } from './modulos/seed/seed.module';
 import { AutoresModule } from './modulos/autores/autores.module';
-import { ClientesModule } from './modulos/clientes/clientes.module';
 import { LibrosModule } from './modulos/libros/libros.module';
 import { AuthModule } from './modulos/auth/auth.module';
-import { UserModule } from './modulos/user/user.module';
 import { JwtStrategy } from './modulos/auth/strategies/jwt-strategy/jwt-strategy';
+import { CategoriasModule } from './modulos/categorias/categorias.module';
+import { TiendasModule } from './modulos/tiendas/tiendas.module';
+import { UsuariosModule } from './modulos/usuarios/usuarios.module';
 
 @Module({
   imports: [
@@ -27,10 +28,11 @@ import { JwtStrategy } from './modulos/auth/strategies/jwt-strategy/jwt-strategy
     }),
     SeedModule,
     AutoresModule,
-    ClientesModule,
     LibrosModule,
     AuthModule,
-    UserModule,
+    CategoriasModule,
+    TiendasModule,
+    UsuariosModule,
   ],
   controllers: [AppController],
   providers: [AppService, JwtStrategy],
