@@ -1,26 +1,58 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, InternalServerErrorException } from '@nestjs/common';
 import { CreateCategoriaDto } from './dto/create-categoria.dto';
-import { UpdateCategoriaDto } from './dto/update-categoria.dto';
+import { Repository } from 'typeorm';
+import { InjectRepository } from '@nestjs/typeorm';
+import { Categoria } from './entities/categoria.entity';
 
 @Injectable()
 export class CategoriasService {
-  create(createCategoriaDto: CreateCategoriaDto) {
-    return 'This action adds a new categoria';
+  constructor(
+    @InjectRepository(Categoria)
+    private readonly categoriaRepository: Repository<Categoria>,
+  ) {}
+
+  async create(createCategoriaDto: CreateCategoriaDto) {
+    try {
+      const categoria = this.categoriaRepository.create(createCategoriaDto);
+      await this.categoriaRepository.save(categoria);
+      return {
+        msg: 'Registro Insertado',
+        data: categoria,
+        status: 200,
+      };
+    } catch (error) {
+      throw new InternalServerErrorException(
+        'Pongase en contacto con el Sysadmin',
+      );
+    }
   }
 
   findAll() {
-    return `This action returns all categorias`;
+    const categorias = this.categoriaRepository.find({
+      relations: {
+        libros: true,
+      },
+    });
+    return categorias;
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} categoria`;
+  findOne(cod: string) {
+    const categoria = this.categoriaRepository.findOne({
+      where: {
+        cod,
+      },
+    });
+    return categoria;
   }
 
-  update(id: number, updateCategoriaDto: UpdateCategoriaDto) {
-    return `This action updates a #${id} categoria`;
-  }
-
-  remove(id: number) {
-    return `This action removes a #${id} categoria`;
+  async deleteAllCategorias() {
+    const query = this.categoriaRepository.createQueryBuilder('categoria');
+    try {
+      return await query.delete().where({}).execute();
+    } catch (error) {
+      throw new InternalServerErrorException(
+        'Pongase en contacto con el Sysadmin',
+      );
+    }
   }
 }

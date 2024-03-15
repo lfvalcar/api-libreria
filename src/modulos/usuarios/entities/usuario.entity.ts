@@ -18,6 +18,34 @@ export class Usuario {
   })
   id: string;
 
+  @Column('varchar', {
+    name: 'username',
+    nullable: false,
+    unique: true,
+    length: 150,
+  })
+  username: string;
+
+  @Column('text', {
+    array: true,
+    //dto -> ['invitado', 'usuario', 'gestor', 'administrador']
+    default: ['usuario'],
+  })
+  role: string[];
+
+  @Column('bool', {
+    default: true,
+  })
+  isActive: boolean;
+
+  @Column('varchar', {
+    name: 'avatar',
+    nullable: true,
+    unique: false,
+    length: 150,
+  })
+  avatar: string; //ruta relativa a "public/images"
+
   @Column('text', {
     name: 'email',
     nullable: false,
@@ -27,49 +55,12 @@ export class Usuario {
   email: string;
 
   @Column('varchar', {
-    name: 'username',
-    nullable: false,
-    unique: true,
-    length: 150,
-  })
-  username: string;
-
-  @Column('varchar', {
     name: 'password',
     nullable: false,
     unique: false,
     length: 255,
   })
   password: string;
-
-  @Column('bool', {
-    default: true,
-  })
-  isActive: boolean;
-
-  @Column('text', {
-    array: true,
-    //dto -> ['invitado', 'usuario', 'gestor', 'administrador']
-    default: ['usuario'],
-  })
-  roles: string[];
-
-  @Column('varchar', {
-    name: 'logo',
-    nullable: true,
-    unique: false,
-    length: 150,
-  })
-  logo: string; //ruta relativa a "public/images"
-
-  //redes sociales
-  @Column('varchar', {
-    name: 'instagram',
-    nullable: true,
-    unique: false,
-    length: 150,
-  })
-  instagram: string;
 
   @CreateDateColumn({
     name: 'create_at',
@@ -80,9 +71,6 @@ export class Usuario {
     name: 'update_at',
   })
   updatedAt: Date;
-
-  //relación de 1 a 1 de Auth(User) <---> Cliente
-  //cliente: Cliente;
 
   @ManyToOne(() => Rol, (rol) => rol.user)
   @JoinColumn({ name: 'rol_id' })

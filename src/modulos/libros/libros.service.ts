@@ -4,21 +4,25 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { Libro } from './entities/libro.entity';
 import { AutoresService } from '../autores/autores.service';
+import { CategoriasService } from '../categorias/categorias.service';
 
 @Injectable()
 export class LibrosService {
   constructor(
     @InjectRepository(Libro)
     private readonly librosRepository: Repository<Libro>,
-    private readonly AutoresService: AutoresService,
+    private readonly autoresService: AutoresService,
+    private readonly categoriasService: CategoriasService,
   ) {}
 
   async create(createLibroDto: CreateLibroDto) {
     try {
-      const { autor, ...campos } = createLibroDto;
+      const { autor, categoria, ...campos } = createLibroDto;
       const libro = this.librosRepository.create({ ...campos });
-      const autorobj = await this.AutoresService.findOne(autor);
+      const autorobj = await this.autoresService.findOne(autor);
+      const categoriaobj = await this.categoriasService.findOne(categoria);
       libro.autor = autorobj;
+      libro.categoria = categoriaobj;
       await this.librosRepository.save(libro);
       return {
         msg: 'Registro Insertado',
@@ -36,6 +40,8 @@ export class LibrosService {
     const libros = this.librosRepository.find({
       relations: {
         autor: true,
+        tiendas: true,
+        categoria: true,
       },
     });
     return libros;
@@ -48,6 +54,7 @@ export class LibrosService {
       },
       relations: {
         autor: true,
+        categoria: true,
       },
     });
     return autor;
@@ -57,8 +64,9 @@ export class LibrosService {
   //   return `This action updates a #${id} libro`;
   // }
 
-  remove(id: number) {
-    return `This action removes a #${id} libro`;
+  remove(isbn: string) {
+    this.librosRepository.delete({ isbn });
+    return `libro con el isbn ${isbn} borrado`;
   }
 
   async deleteAllLibros() {

@@ -1,46 +1,57 @@
-import { IsIn, IsInt, IsNumber, IsOptional, IsPositive, IsString, Length, MaxLength, MinLength } from "class-validator"
+import {
+  IsIn,
+  IsNumber,
+  IsOptional,
+  IsPositive,
+  IsString,
+  Length,
+  MinLength,
+} from 'class-validator';
 
 export class CreateLibroDto {
+  @IsString()
+  @Length(13)
+  isbn: string;
 
-    @IsString()
-    @Length(13)
-    isbn: string;
+  @IsString()
+  @MinLength(3)
+  title: string;
 
-    @IsString()
-    @MinLength(3)
-    title: string;
+  @IsPositive()
+  @IsNumber()
+  pageCount: number;
 
-    @IsPositive()
-    @IsNumber()
-    pageCount: number;
+  @IsPositive()
+  @IsNumber()
+  precio: number;
 
-    @IsPositive()
-    @IsNumber()
-    precio: number;
+  @IsString()
+  publishedDate?: string;
 
-    @IsString()
-    publishedDate?: string;
-    
-    @IsString()
-    @IsOptional()
-    thumbnailUrl?: string;
-    
-    @IsString()
-    @IsOptional()
-    shortDescription?: string;
+  @IsString()
+  @IsOptional()
+  thumbnailUrl?: string;
 
-    @IsString()
-    @IsOptional()
-    longDescription?: string;
+  @IsString()
+  @IsOptional()
+  shortDescription?: string;
 
-    @IsString()
-    @MinLength(1)
-    @IsIn(['PUBLISH','UNPUBLISH'])
-    status: string;
+  @IsString()
+  @IsOptional()
+  longDescription?: string;
 
-    // Foráneas
-    @IsString()
-    @MinLength(1)
-    autor?: string;
+  @IsString()
+  @IsIn(['PUBLISH', 'UNPUBLISH'])
+  status: string;
 
+  // Foráneas
+  @IsString()
+  @MinLength(1)
+  @IsOptional()
+  autor?: string;
+
+  @IsString()
+  @MinLength(1)
+  @IsOptional()
+  categoria?: string;
 }

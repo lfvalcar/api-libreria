@@ -11,6 +11,9 @@ export class CreateUsuarioDto {
   password: string;
 
   @IsString()
+  fullname: string;
+
+  @IsString()
   rol: string;
 
   //....

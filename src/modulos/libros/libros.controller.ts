@@ -37,8 +37,8 @@ export class LibrosController {
   //   return this.librosService.update(+id, updateLibroDto);
   // }
 
-  @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.librosService.remove(+id);
+  @Delete(':isbn')
+  remove(@Param('isbn') isbn: string) {
+    return this.librosService.remove(isbn);
   }
 }

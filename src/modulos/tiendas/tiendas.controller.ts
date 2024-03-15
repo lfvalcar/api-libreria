@@ -1,7 +1,6 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import { Controller, Get, Post, Body, Param } from '@nestjs/common';
 import { TiendasService } from './tiendas.service';
 import { CreateTiendaDto } from './dto/create-tienda.dto';
-import { UpdateTiendaDto } from './dto/update-tienda.dto';
 
 @Controller('tiendas')
 export class TiendasController {
@@ -22,13 +21,13 @@ export class TiendasController {
     return this.tiendasService.findOne(+id);
   }
 
-  @Patch(':id')
-  update(@Param('id') id: string, @Body() updateTiendaDto: UpdateTiendaDto) {
-    return this.tiendasService.update(+id, updateTiendaDto);
-  }
+  // @Patch(':id')
+  // update(@Param('id') id: string, @Body() updateTiendaDto: UpdateTiendaDto) {
+  //   return this.tiendasService.update(+id, updateTiendaDto);
+  // }
 
-  @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.tiendasService.remove(+id);
-  }
+  // @Delete(':id')
+  // remove(@Param('id') id: string) {
+  //   return this.tiendasService.remove(+id);
+  // }
 }

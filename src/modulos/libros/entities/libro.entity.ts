@@ -1,8 +1,12 @@
 import { Autore } from 'src/modulos/autores/entities/autore.entity';
+import { Categoria } from 'src/modulos/categorias/entities/categoria.entity';
+import { Tienda } from 'src/modulos/tiendas/entities/tienda.entity';
 import {
   BeforeInsert,
   Column,
   Entity,
+  JoinTable,
+  ManyToMany,
   ManyToOne,
   PrimaryColumn,
 } from 'typeorm';
@@ -57,15 +61,17 @@ export class Libro {
   })
   status: string;
 
-  // @ManyToOne(
-  //     () => Cliente,
-  //     (cliente) => cliente.libros,
-  //     { cascade: false }
-  // )
-  // cliente?: Cliente
-
   @ManyToOne(() => Autore, (autor) => autor.libros, { cascade: true })
   autor?: Autore;
+
+  @ManyToOne(() => Categoria, (categoria) => categoria.libros, {
+    cascade: true,
+  })
+  categoria?: Categoria;
+
+  @ManyToMany(() => Tienda, (tienda) => tienda.libros)
+  @JoinTable()
+  tiendas?: Tienda[];
 
   @BeforeInsert()
   checkTitle() {
