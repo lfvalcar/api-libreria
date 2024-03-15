@@ -1,0 +1,63 @@
+[
+    {
+        "cod": "C001",
+        "name": "Ficción Contemporánea",
+        "descripcion": "Colección de novelas de ficción escritas en el siglo XXI.",
+        "logo": "fiction.jpg"
+    },
+    {
+        "cod": "C002",
+        "name": "Ciencia Ficción",
+        "descripcion": "Libros que exploran mundos imaginarios y tecnologías futuristas.",
+        "logo": "scifi.jpg"
+    },
+    {
+        "cod": "C003",
+        "name": "Historia Antigua",
+        "descripcion": "Obras que narran eventos y civilizaciones de la antigüedad.",
+        "logo": "history.jpg"
+    },
+    {
+        "cod": "C004",
+        "name": "Fantasía Épica",
+        "descripcion": "Relatos de magia, héroes y mundos fantásticos.",
+        "logo": "fantasy.jpg"
+    },
+    {
+        "cod": "C005",
+        "name": "Poesía Clásica",
+        "descripcion": "Colección de poemas de los grandes autores de la literatura clásica.",
+        "logo": "poetry.jpg"
+    },
+    {
+        "cod": "C006",
+        "name": "Thriller Psicológico",
+        "descripcion": "Libros de suspense que exploran las profundidades de la mente humana.",
+        "logo": "thriller.jpg"
+    },
+    {
+        "cod": "C007",
+        "name": "Autoayuda y Desarrollo Personal",
+        "descripcion": "Guías y consejos para mejorar la calidad de vida y alcanzar el éxito personal.",
+        "logo": "self-help.jpg"
+    },
+    {
+        "cod": "C008",
+        "name": "Arte y Fotografía",
+        "descripcion": "Libros sobre arte, fotografía y diseño.",
+        "logo": "art.jpg"
+    },
+    {
+        "cod": "C009",
+        "name": "Cocina Internacional",
+        "descripcion": "Recetas y técnicas de cocina de diferentes culturas del mundo.",
+        "logo": "cooking.jpg"
+    },
+    {
+        "cod": "C010",
+        "name": "Economía y Finanzas",
+        "descripcion": "Libros sobre temas financieros, economía y negocios.",
+        "logo": "finance.jpg"
+    }
+    
+]
