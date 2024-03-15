@@ -4,17 +4,17 @@ import {
   InternalServerErrorException,
   NotFoundException,
 } from '@nestjs/common';
-import { UserRepository } from '../user/entities/user.repository';
+import { UsuarioRepository } from '../usuarios/entities/usuario.repository';
 import { RegisterAuthDto } from './dto/register.dto';
 import { LoginAuthDto } from './dto/login.dto';
-import { User } from '../user/entities/user.entity';
+import { Usuario } from '../usuarios/entities/usuario.entity';
 import { JwtService } from '@nestjs/jwt';
 import * as bcrypt from 'bcrypt';
 
 @Injectable()
 export class AuthService {
   constructor(
-    private readonly userRepository: UserRepository,
+    private readonly userRepository: UsuarioRepository,
     private readonly jwtService: JwtService,
   ) {}
 
@@ -77,7 +77,7 @@ export class AuthService {
     return await bcrypt.compare(password, hash);
   }
 
-  private getAccesToken(user: User) {
+  private getAccesToken(user: Usuario) {
     // console.log(user);
     // console.log(proccess.env.JWT_SECRET)
 

@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { PassportStrategy } from '@nestjs/passport';
 import { ExtractJwt, Strategy } from 'passport-jwt';
-import { User } from 'src/modulos/user/entities/user.entity';
+import { Usuario } from 'src/modulos/usuarios/entities/usuario.entity';
 
 @Injectable()
 export class JwtStrategy extends PassportStrategy(Strategy) {
@@ -18,7 +18,7 @@ export class JwtStrategy extends PassportStrategy(Strategy) {
 
   // Creamos un método validate, que valida el payload del token y que es
   // Con la estructura de la entidad User
-  async validate(payload: User) {
+  async validate(payload: Usuario) {
     console.log(payload);
 
     // Devolvemos los campos del payload
