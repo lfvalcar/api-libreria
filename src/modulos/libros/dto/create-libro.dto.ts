@@ -47,11 +47,13 @@ export class CreateLibroDto {
   // Foráneas
   @IsString()
   @MinLength(1)
-  @IsOptional()
-  autor?: string;
+  autor: string;
 
   @IsString()
   @MinLength(1)
-  @IsOptional()
-  categoria?: string;
+  categoria: string;
+
+  @IsString()
+  @MinLength(1)
+  editorial: string;
 }

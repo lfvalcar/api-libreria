@@ -36,16 +36,14 @@ export class AutoresService {
   }
 
   findAll() {
-    return `This action returns all autores`;
+    const autores = this.autorRepository.find({});
+    return autores;
   }
 
   findOne(nif: string) {
     const autor = this.autorRepository.findOne({
       where: {
         nif,
-      },
-      relations: {
-        editorial: true,
       },
     });
     return autor;

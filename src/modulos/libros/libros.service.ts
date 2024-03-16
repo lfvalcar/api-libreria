@@ -1,10 +1,11 @@
 import { Injectable, InternalServerErrorException } from '@nestjs/common';
 import { CreateLibroDto } from './dto/create-libro.dto';
 import { InjectRepository } from '@nestjs/typeorm';
-import { Repository } from 'typeorm';
 import { Libro } from './entities/libro.entity';
 import { AutoresService } from '../autores/autores.service';
 import { CategoriasService } from '../categorias/categorias.service';
+import { EditorialesService } from '../editoriales/editoriales.service';
+import { Repository } from 'typeorm';
 
 @Injectable()
 export class LibrosService {
@@ -13,14 +14,17 @@ export class LibrosService {
     private readonly librosRepository: Repository<Libro>,
     private readonly autoresService: AutoresService,
     private readonly categoriasService: CategoriasService,
+    private readonly editorialesService: EditorialesService,
   ) {}
 
   async create(createLibroDto: CreateLibroDto) {
     try {
-      const { autor, categoria, ...campos } = createLibroDto;
+      const { autor, categoria, editorial, ...campos } = createLibroDto;
       const libro = this.librosRepository.create({ ...campos });
       const autorobj = await this.autoresService.findOne(autor);
       const categoriaobj = await this.categoriasService.findOne(categoria);
+      const editorialobj = await this.editorialesService.findOne(editorial);
+      libro.editorial = editorialobj;
       libro.autor = autorobj;
       libro.categoria = categoriaobj;
       await this.librosRepository.save(libro);
@@ -40,8 +44,8 @@ export class LibrosService {
     const libros = this.librosRepository.find({
       relations: {
         autor: true,
-        tiendas: true,
         categoria: true,
+        editorial: true,
       },
     });
     return libros;
@@ -60,7 +64,6 @@ export class LibrosService {
     });
     return autor;
   }
-
   // update(id: number, updateLibroDto: UpdateLibroDto) {
   //   return `This action updates a #${id} libro`;
   // }

@@ -1,35 +1,62 @@
-
 [
   {
     "nif": "456563234X",
-    "nombre": "Glen Smith"
+    "nombre": "Glen Smith",
+    "foto": "https://via.placeholder.com/150",
+    "localidad": "Buenos Aires, Argentina"
   },
   {
     "nif": "42956434Y",
-    "nombre": "Peter Ledbrook"
+    "nombre": "Peter Ledbrook",
+    "foto": "https://via.placeholder.com/150",
+    "localidad": "París, Francia"
   },
   {
     "nif": "34561812Z",
-    "nombre": "Kyle Banker"
+    "nombre": "Kyle Banker",
+    "foto": "https://via.placeholder.com/150",
+    "localidad": "Nueva York, Estados Unidos"
   },
   {
     "nif": "72345678H",
-    "nombre": "Michael J. Barlotta"
+    "nombre": "Michael J. Barlotta",
+    "foto": "https://via.placeholder.com/150",
+    "localidad": "Oporto, Portugal"
   },
   {
     "nif": "456523234J",
-    "nombre": "Alex Holmes"
+    "nombre": "Alex Holmes",
+    "foto": "https://via.placeholder.com/150",
+    "localidad": "Portland, Estados Unidos"
   },
   {
     "nif": "42056434L",
-    "nombre": "Bradley Austin Davis"
+    "nombre": "Bradley Austin Davis",
+    "foto": "https://via.placeholder.com/150",
+    "localidad": "Londres, Reino Unido"
   },
   {
     "nif": "34467813S",
-    "nombre": "Karen Bryla"
+    "nombre": "Karen Bryla",
+    "foto": "https://via.placeholder.com/150",
+    "localidad": "Tokio, Japón"
   },
   {
     "nif": "10355698D",
-    "nombre": "Alex Benton"
+    "nombre": "Alex Benton",
+    "foto": "https://via.placeholder.com/150",
+    "localidad": "Inverness, Escocia"
+  },
+  {
+    "nif": "4291671S4G",
+    "nombre": "Marton Spillman",
+    "foto": "https://via.placeholder.com/150",
+    "localidad": "Santorini, Grecia"
+  },
+  {
+    "nif": "12519334O",
+    "nombre": "Megane Dartos",
+    "foto": "https://via.placeholder.com/150",
+    "localidad": "Lisboa, Portugal"
   }
 ]

@@ -3,17 +3,17 @@ import { Injectable, InternalServerErrorException } from '@nestjs/common';
 import { AutoresService } from '../autores/autores.service';
 import { LibrosService } from '../libros/libros.service';
 import { CategoriasService } from '../categorias/categorias.service';
-import { TiendasService } from '../tiendas/tiendas.service';
+import { EditorialesService } from '../editoriales/editoriales.service';
 // Archivos JSON
 import * as seedAutores from '../seed/data/autores.json';
 import * as seedLibros from '../seed/data/libros.json';
 import * as seedCategorias from '../seed/data/categorias.json';
-import * as seedTiendas from '../seed/data/tiendas.json';
+import * as seedEditoriales from '../seed/data/editoriales.json';
 // Dtos
 import { CreateLibroDto } from '../libros/dto/create-libro.dto';
 import { CreateAutoreDto } from '../autores/dto/create-autore.dto';
 import { CreateCategoriaDto } from '../categorias/dto/create-categoria.dto';
-import { CreateTiendaDto } from '../tiendas/dto/create-tienda.dto';
+import { CreateEditorialeDto } from '../editoriales/dto/create-editoriale.dto';
 
 @Injectable()
 export class SeedService {
@@ -21,21 +21,30 @@ export class SeedService {
     private readonly autoreService: AutoresService,
     private readonly librosService: LibrosService,
     private readonly categoriasService: CategoriasService,
-    private readonly tiendasService: TiendasService,
+    private readonly editorialesService: EditorialesService,
   ) {}
 
   public async loadData() {
-    await this.insertNewLibros();
-    await this.insertNewAutores();
+    await this.deleteAll();
     await this.insertNewCategorias();
-    await this.insertNewTiendas();
+    await this.insertNewEditoriales();
+    await this.insertNewAutores();
+    await this.insertNewLibros();
+  }
+
+  private async deleteAll() {
+    try {
+      // Borrado masivo de libros
+      await this.librosService.deleteAllLibros();
+    } catch (error) {
+      throw new InternalServerErrorException(
+        'Pongase en contacto con el Sysadmin',
+      );
+    }
   }
 
   private async insertNewAutores() {
     try {
-      // Borrado masivo de autores
-      // await this.autoreService.deleteAllAutores();
-
       const insertPromisesAutores = [];
       seedAutores.forEach((autor: CreateAutoreDto) => {
         // if (+autor.id > 30)
@@ -56,9 +65,6 @@ export class SeedService {
 
   private async insertNewLibros() {
     try {
-      // Borrado masivo de libros
-      await this.librosService.deleteAllLibros();
-
       const insertPromisesLibros = [];
       seedLibros.forEach((libro: CreateLibroDto) => {
         insertPromisesLibros.push(this.librosService.create(libro));
@@ -78,8 +84,6 @@ export class SeedService {
 
   private async insertNewCategorias() {
     try {
-      // await this.categoriasService.deleteAllCategorias();
-
       const insertPromisesCategorias = [];
       seedCategorias.forEach((categoria: CreateCategoriaDto) => {
         insertPromisesCategorias.push(this.categoriasService.create(categoria));
@@ -97,18 +101,18 @@ export class SeedService {
     }
   }
 
-  private async insertNewTiendas() {
+  private async insertNewEditoriales() {
     try {
-      await this.tiendasService.deleteAllTiendas();
-
-      const insertPromisesTiendas = [];
-      seedTiendas.forEach((tienda: CreateTiendaDto) => {
-        insertPromisesTiendas.push(this.tiendasService.create(tienda));
+      const insertPromisesEditoriales = [];
+      seedEditoriales.forEach((editorial: CreateEditorialeDto) => {
+        insertPromisesEditoriales.push(
+          this.editorialesService.create(editorial),
+        );
       });
-      await Promise.all(insertPromisesTiendas);
+      await Promise.all(insertPromisesEditoriales);
       return {
-        msg: 'Load Data de tiendas ejecutado con éxito',
-        data: insertPromisesTiendas,
+        msg: 'Load Data de editoriales ejecutado con éxito',
+        data: insertPromisesEditoriales,
         status: 200,
       };
     } catch (error) {

@@ -31,12 +31,6 @@ export class LibrosController {
     return this.librosService.findOne(isbn);
   }
 
-  // @Patch(':id')
-  // @UseGuards(AuthGuard('jwt'))
-  // update(@Param('id') id: string, @Body() updateLibroDto: UpdateLibroDto) {
-  //   return this.librosService.update(+id, updateLibroDto);
-  // }
-
   @Delete(':isbn')
   remove(@Param('isbn') isbn: string) {
     return this.librosService.remove(isbn);

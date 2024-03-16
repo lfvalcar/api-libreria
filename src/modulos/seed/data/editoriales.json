@@ -1,0 +1,73 @@
+[
+    {
+      "nombre": "Librería La Biblioteca",
+      "localidad": "Buenos Aires, Argentina",
+      "telefono": "123-456-789",
+      "sitioweb": "https://www.la-biblioteca.com/",
+      "imagen": "https://via.placeholder.com/150"
+    },
+    {
+      "nombre": "Libros de París",
+      "localidad": "París, Francia",
+      "telefono": "987-654-321",
+      "sitioweb": "https://www.libros-de-paris.com/",
+      "imagen": "https://via.placeholder.com/150"
+    },
+    {
+      "nombre": "New York Books",
+      "localidad": "Nueva York, Estados Unidos",
+      "telefono": "456-789-123",
+      "sitioweb": "https://www.new-york-books.com/",
+      "imagen": "https://via.placeholder.com/150"
+    },
+    {
+      "nombre": "Librería Porto",
+      "localidad": "Oporto, Portugal",
+      "telefono": "789-123-456",
+      "sitioweb": "https://www.libreria-porto.pt/",
+      "imagen": "https://via.placeholder.com/150"
+    },
+    {
+      "nombre": "Powell's Bookstore",
+      "localidad": "Portland, Estados Unidos",
+      "telefono": "345-678-912",
+      "sitioweb": "https://www.powells-bookstore.com/",
+      "imagen": "https://via.placeholder.com/150"
+    },
+    {
+      "nombre": "Book Emporium",
+      "localidad": "Londres, Reino Unido",
+      "telefono": "876-543-219",
+      "sitioweb": "https://www.book-emporium.co.uk/",
+      "imagen": "https://via.placeholder.com/150"
+    },
+    {
+      "nombre": "Tokyo Bookstore",
+      "localidad": "Tokio, Japón",
+      "telefono": "654-321-987",
+      "sitioweb": "https://www.tokyo-bookstore.jp/",
+      "imagen": "https://via.placeholder.com/150"
+    },
+    {
+      "nombre": "Highland Books",
+      "localidad": "Inverness, Escocia",
+      "telefono": "321-654-987",
+      "sitioweb": "https://www.highland-books.com/",
+      "imagen": "https://via.placeholder.com/150"
+    },
+    {
+      "nombre": "Santorini Bookshop",
+      "localidad": "Santorini, Grecia",
+      "telefono": "678-912-345",
+      "sitioweb": "https://www.santorini-bookshop.org/",
+      "imagen": "https://via.placeholder.com/150"
+    },
+    {
+      "nombre": "Lisbon Bookstore",
+      "localidad": "Lisboa, Portugal",
+      "telefono": "912-345-678",
+      "sitioweb": "https://www.lisbon-bookstore.pt/",
+      "imagen": "https://via.placeholder.com/150"
+    }
+  ]
+  

@@ -1,23 +1,48 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, InternalServerErrorException } from '@nestjs/common';
 import { CreateEditorialeDto } from './dto/create-editoriale.dto';
-import { UpdateEditorialeDto } from './dto/update-editoriale.dto';
+import { InjectRepository } from '@nestjs/typeorm';
+import { Editorial } from './entities/editoriale.entity';
+import { Repository } from 'typeorm';
 
 @Injectable()
 export class EditorialesService {
-  create(createEditorialeDto: CreateEditorialeDto) {
-    return 'This action adds a new editoriale';
+  constructor(
+    @InjectRepository(Editorial)
+    private readonly editorialRepository: Repository<Editorial>,
+  ) {}
+
+  async create(createEditorialeDto: CreateEditorialeDto) {
+    try {
+      const editorial = this.editorialRepository.create(createEditorialeDto);
+      await this.editorialRepository.save(editorial);
+      return {
+        msg: 'Registro Insertado',
+        data: editorial,
+        status: 200,
+      };
+    } catch (error) {
+      throw new InternalServerErrorException(
+        'Pongase en contacto con el Sysadmin',
+      );
+    }
   }
 
   findAll() {
-    return `This action returns all editoriales`;
+    const editoriales = this.editorialRepository.find({
+      relations: {
+        libros: true,
+      },
+    });
+    return editoriales;
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} editoriale`;
-  }
-
-  update(id: number, updateEditorialeDto: UpdateEditorialeDto) {
-    return `This action updates a #${id} editoriale`;
+  findOne(nombre: string) {
+    const editorial = this.editorialRepository.findOne({
+      where: {
+        nombre,
+      },
+    });
+    return editorial;
   }
 
   remove(id: number) {

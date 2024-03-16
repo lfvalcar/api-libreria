@@ -12,4 +12,8 @@ export class CreateAutoreDto {
   @IsString()
   @MinLength(1)
   foto: string;
+
+  @IsString()
+  @MinLength(1)
+  localidad: string;
 }

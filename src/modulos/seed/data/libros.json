@@ -10,7 +10,8 @@
       "status": "PUBLISH",
       "precio":100,
       "autor": "456563234X",
-      "categoria": "C001"
+      "categoria": "C001",
+      "editorial": "Librería La Biblioteca"
     },
     {
       "isbn": "2222222222222",
@@ -21,7 +22,8 @@
       "status": "PUBLISH",
       "precio":100,
       "autor": "42956434Y",
-      "categoria": "C002"
+      "categoria": "C002",
+      "editorial": "Libros de París"
     },
     {
       "isbn": "3333333333333",
@@ -34,7 +36,8 @@
       "status": "PUBLISH",
       "precio":100,
       "autor": "34561812Z",
-      "categoria": "C003"
+      "categoria": "C003",
+      "editorial": "New York Books"
     },
     {
       "isbn": "4444444444444",
@@ -44,7 +47,8 @@
       "status": "UNPUBLISH",
       "precio":100,
       "autor": "72345678H",
-      "categoria": "C004"
+      "categoria": "C004",
+      "editorial": "Librería Porto"
 
     },
     {
@@ -55,7 +59,8 @@
       "status": "UNPUBLISH",
       "precio":100,
       "autor": "456523234J",
-      "categoria": "C005"
+      "categoria": "C005",
+      "editorial": "Powell's Bookstore"
 
     },
     {
@@ -67,7 +72,8 @@
       "status": "PUBLISH",
       "precio":100,
       "autor": "42056434L",
-      "categoria": "C005"
+      "categoria": "C005",
+      "editorial": "Book Emporium"
 
     },
     {
@@ -79,7 +85,8 @@
       "status": "PUBLISH",
       "precio":100,
       "autor": "34467813S",
-      "categoria": "C004"
+      "categoria": "C004",
+      "editorial": "Tokyo Bookstore"
     },
     {
       "isbn": "8888888888888",
@@ -89,7 +96,8 @@
       "status": "UNPUBLISH",
       "precio":100,
       "autor": "10355698D",
-      "categoria": "C003"
+      "categoria": "C003",
+      "editorial": "Highland Books"
 
     },
     {
@@ -101,7 +109,8 @@
       "status": "PUBLISH",
       "precio":100,
       "autor": "456563234X",
-      "categoria": "C002"
+      "categoria": "C002",
+      "editorial": "Santorini Bookshop"
 
     },
     {
@@ -112,7 +121,8 @@
       "status": "UNPUBLISH",
       "precio":100,
       "autor": "42956434Y",
-      "categoria": "C001"
+      "categoria": "C001",
+      "editorial": "Lisbon Bookstore"
 
     },
     {
@@ -123,7 +133,8 @@
       "status": "PUBLISH",
       "precio":100,
       "autor": "34561812Z",
-      "categoria": "C001"
+      "categoria": "C001",
+      "editorial": "Librería Porto"
 
     },
     {
@@ -134,7 +145,8 @@
       "status": "UNPUBLISH",
       "precio":100,
       "autor": "72345678H",
-      "categoria": "C002"
+      "categoria": "C002",
+      "editorial": "Librería La Biblioteca"
 
     }
   ]

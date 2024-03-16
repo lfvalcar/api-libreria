@@ -1,6 +1,6 @@
 import { IsString, Length, MinLength } from 'class-validator';
 
-export class CreateTiendaDto {
+export class CreateEditorialeDto {
   @IsString()
   @MinLength(10)
   nombre: string;
