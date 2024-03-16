@@ -44,6 +44,9 @@ export class AutoresService {
       where: {
         nif,
       },
+      relations: {
+        editorial: true,
+      },
     });
     return autor;
   }

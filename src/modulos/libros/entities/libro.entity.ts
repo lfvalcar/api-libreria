@@ -1,5 +1,6 @@
 import { Autore } from 'src/modulos/autores/entities/autore.entity';
 import { Categoria } from 'src/modulos/categorias/entities/categoria.entity';
+import { Editorial } from 'src/modulos/editoriales/entities/editoriale.entity';
 import { Tienda } from 'src/modulos/tiendas/entities/tienda.entity';
 import {
   BeforeInsert,
@@ -68,6 +69,11 @@ export class Libro {
     cascade: true,
   })
   categoria?: Categoria;
+
+  @ManyToOne(() => Editorial, (editorial) => editorial.libros, {
+    cascade: true,
+  })
+  editorial?: Editorial;
 
   @ManyToMany(() => Tienda, (tienda) => tienda.libros)
   @JoinTable()

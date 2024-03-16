@@ -11,6 +11,7 @@ import { JwtStrategy } from './modulos/auth/strategies/jwt-strategy/jwt-strategy
 import { CategoriasModule } from './modulos/categorias/categorias.module';
 import { TiendasModule } from './modulos/tiendas/tiendas.module';
 import { UsuariosModule } from './modulos/usuarios/usuarios.module';
+import { EditorialesModule } from './modulos/editoriales/editoriales.module';
 
 @Module({
   imports: [
@@ -33,6 +34,7 @@ import { UsuariosModule } from './modulos/usuarios/usuarios.module';
     CategoriasModule,
     TiendasModule,
     UsuariosModule,
+    EditorialesModule,
   ],
   controllers: [AppController],
   providers: [AppService, JwtStrategy],

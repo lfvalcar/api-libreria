@@ -1,0 +1,23 @@
+import { IsString, Length, MinLength } from 'class-validator';
+
+export class CreateTiendaDto {
+  @IsString()
+  @MinLength(10)
+  nombre: string;
+
+  @IsString()
+  @MinLength(10)
+  localidad: string;
+
+  @IsString()
+  @Length(11)
+  telefono: string;
+
+  @IsString()
+  @MinLength(10)
+  sitioweb: string;
+
+  @IsString()
+  @MinLength(10)
+  imagen: string;
+}

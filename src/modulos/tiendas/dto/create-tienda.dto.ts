@@ -12,4 +12,8 @@ export class CreateTiendaDto {
   @IsNumber()
   @MinLength(1)
   empleados: number;
+
+  @IsString()
+  @MinLength(1)
+  imagen: string;
 }

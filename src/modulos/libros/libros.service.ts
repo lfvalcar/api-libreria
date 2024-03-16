@@ -55,6 +55,7 @@ export class LibrosService {
       relations: {
         autor: true,
         categoria: true,
+        editorial: true,
       },
     });
     return autor;

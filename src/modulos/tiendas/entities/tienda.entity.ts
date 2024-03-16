@@ -17,6 +17,9 @@ export class Tienda {
   @Column('int')
   empleados: number;
 
+  @Column('text', { unique: true })
+  imagen: string;
+
   @ManyToMany(() => Libro, (libro) => libro.tiendas, { cascade: true })
   libros?: Libro[];
 }

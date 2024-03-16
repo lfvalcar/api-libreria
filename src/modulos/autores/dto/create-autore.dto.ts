@@ -8,4 +8,8 @@ export class CreateAutoreDto {
   @IsString()
   @MinLength(1)
   nombre: string;
+
+  @IsString()
+  @MinLength(1)
+  foto: string;
 }
