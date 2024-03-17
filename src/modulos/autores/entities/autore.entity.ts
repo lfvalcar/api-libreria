@@ -5,8 +5,10 @@ import { Column, Entity, OneToMany, PrimaryColumn } from 'typeorm';
   name: 'AUTORES',
 })
 export class Autore {
-  // Entidades
   @PrimaryColumn()
+  id: string;
+
+  @Column()
   nif: string;
 
   @Column('text', {

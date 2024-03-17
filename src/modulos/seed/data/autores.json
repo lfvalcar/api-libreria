@@ -1,47 +1,55 @@
 [
   {
+    "id": "1",
     "nif": "456563234X",
     "nombre": "Glen Smith",
     "foto": "https://via.placeholder.com/150",
     "localidad": "Buenos Aires, Argentina"
   },
   {
+    "id": "2",
     "nif": "42956434Y",
     "nombre": "Peter Ledbrook",
     "foto": "https://via.placeholder.com/150",
     "localidad": "París, Francia"
   },
   {
+    "id": "3",
     "nif": "34561812Z",
     "nombre": "Kyle Banker",
     "foto": "https://via.placeholder.com/150",
     "localidad": "Nueva York, Estados Unidos"
   },
   {
+    "id": "4",
     "nif": "72345678H",
     "nombre": "Michael J. Barlotta",
     "foto": "https://via.placeholder.com/150",
     "localidad": "Oporto, Portugal"
   },
   {
+    "id": "5",
     "nif": "456523234J",
     "nombre": "Alex Holmes",
     "foto": "https://via.placeholder.com/150",
     "localidad": "Portland, Estados Unidos"
   },
   {
+    "id": "6",
     "nif": "42056434L",
     "nombre": "Bradley Austin Davis",
     "foto": "https://via.placeholder.com/150",
     "localidad": "Londres, Reino Unido"
   },
   {
+    "id": "7",
     "nif": "34467813S",
     "nombre": "Karen Bryla",
     "foto": "https://via.placeholder.com/150",
     "localidad": "Tokio, Japón"
   },
   {
+    "id": "8",
     "nif": "10355698D",
     "nombre": "Alex Benton",
     "foto": "https://via.placeholder.com/150",

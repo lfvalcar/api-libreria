@@ -2,6 +2,9 @@ import { IsString, Length, MinLength } from 'class-validator';
 
 export class CreateEditorialeDto {
   @IsString()
+  id: string;
+  
+  @IsString()
   @MinLength(10)
   nombre: string;
 
