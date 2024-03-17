@@ -1,12 +1,4 @@
-import {
-  Controller,
-  Get,
-  Post,
-  Body,
-  Param,
-  Delete,
-  UseGuards,
-} from '@nestjs/common';
+import { Controller, Get, Post, Body, Param, UseGuards } from '@nestjs/common';
 import { LibrosService } from './libros.service';
 import { CreateLibroDto } from './dto/create-libro.dto';
 import { AuthGuard } from '@nestjs/passport';
@@ -31,8 +23,8 @@ export class LibrosController {
     return this.librosService.findOne(isbn);
   }
 
-  @Delete(':isbn')
-  remove(@Param('isbn') isbn: string) {
-    return this.librosService.remove(isbn);
+  @Get('categorias/:cod')
+  getLibrosByCategoria(@Param('cod') cod: string) {
+    return this.librosService.findLibroByCategoria(cod);
   }
 }

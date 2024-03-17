@@ -1,6 +1,6 @@
 [
     {
-      "isbn": "1111111111111",
+      "isbn": "0111111111111",
       "title": "MongoDB in Action",
       "pageCount": 120,
       "publishedDate": "2011-12-12T00:00:00.000-08",
@@ -14,7 +14,7 @@
       "editorial": "Librería La Biblioteca"
     },
     {
-      "isbn": "2222222222222",
+      "isbn": "922222222222",
       "title": "Distributed Application Development with PowerBuilder 6.0",
       "pageCount": 504,
       "publishedDate": "1998-06-01T00:00:00.000-07",
@@ -26,7 +26,7 @@
       "editorial": "Libros de París"
     },
     {
-      "isbn": "3333333333333",
+      "isbn": "333333333333",
       "title": "Grails in Action",
       "pageCount": 520,
       "publishedDate": "2009-05-01T00:00:00.000-07",
@@ -40,7 +40,7 @@
       "editorial": "New York Books"
     },
     {
-      "isbn": "4444444444444",
+      "isbn": "8444444444444",
       "title": "Hadoop in Practice, Second Edition",
       "pageCount": 134,
       "thumbnailUrl": "https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/holmes2.jpg",
@@ -52,7 +52,7 @@
 
     },
     {
-      "isbn": "5555555555555",
+      "isbn": "3555555555555",
       "title": "Oculus Rift in Action",
       "pageCount": 345,
       "thumbnailUrl": "https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/bdavis.jpg",
@@ -77,7 +77,7 @@
 
     },
     {
-      "isbn": "7777777777777",
+      "isbn": "4777777777777",
       "title": "PowerShell in Depth, Second Edition",
       "pageCount": 90,
       "publishedDate": "2018-10-01T00:00:00.000-07",
@@ -89,7 +89,7 @@
       "editorial": "Tokyo Bookstore"
     },
     {
-      "isbn": "8888888888888",
+      "isbn": "1888888888888",
       "title": "Practical Probabilistic Programming",
       "pageCount": 200,
       "thumbnailUrl": "https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/pfeffer.jpg",
@@ -97,11 +97,11 @@
       "precio":100,
       "autor": "10355698D",
       "categoria": "C003",
-      "editorial": "Highland Books"
+      "editorial": "Tokyo Bookstore"
 
     },
     {
-      "isbn": "9999999999999",
+      "isbn": "2999999999999",
       "title": "Unity in Action",
       "pageCount": 300,
       "publishedDate": "2015-01-01T00:00:00.000-07",
@@ -110,11 +110,11 @@
       "precio":100,
       "autor": "456563234X",
       "categoria": "C002",
-      "editorial": "Santorini Bookshop"
+      "editorial": "Book Emporium"
 
     },
     {
-      "isbn": "1000000000000",
+      "isbn": "1600000000000",
       "title": "Express.js in Action",
       "pageCount": 250,
       "thumbnailUrl": "https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/hahn.jpg",
@@ -122,11 +122,11 @@
       "precio":100,
       "autor": "42956434Y",
       "categoria": "C001",
-      "editorial": "Lisbon Bookstore"
+      "editorial": "Powell's Bookstore"
 
     },
     {
-      "isbn": "1111111111110",
+      "isbn": "4711111111110",
       "title": "Learn Git in a Month of Lunches",
       "pageCount": 100,
       "thumbnailUrl": "https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/umali.jpg",

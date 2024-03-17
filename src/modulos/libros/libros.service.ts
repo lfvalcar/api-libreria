@@ -1,11 +1,15 @@
-import { Injectable, InternalServerErrorException } from '@nestjs/common';
+import {
+  Injectable,
+  InternalServerErrorException,
+  Param,
+} from '@nestjs/common';
 import { CreateLibroDto } from './dto/create-libro.dto';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Libro } from './entities/libro.entity';
 import { AutoresService } from '../autores/autores.service';
 import { CategoriasService } from '../categorias/categorias.service';
 import { EditorialesService } from '../editoriales/editoriales.service';
-import { Repository } from 'typeorm';
+import { FindOneOptions, Like, Repository } from 'typeorm';
 
 @Injectable()
 export class LibrosService {
@@ -68,9 +72,16 @@ export class LibrosService {
   //   return `This action updates a #${id} libro`;
   // }
 
-  remove(isbn: string) {
-    this.librosRepository.delete({ isbn });
-    return `libro con el isbn ${isbn} borrado`;
+  async findLibroByCategoria(@Param('cod') cod: string) {
+    const libros = await this.librosRepository.find({
+      where: {
+        categoria: {
+          cod: Like(`${cod}`),
+        },
+      },
+      relations: ['autor', 'categoria', 'editorial'],
+    } as FindOneOptions<Libro>);
+    return libros;
   }
 
   async deleteAllLibros() {

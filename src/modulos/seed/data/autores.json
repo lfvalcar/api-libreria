@@ -46,17 +46,5 @@
     "nombre": "Alex Benton",
     "foto": "https://via.placeholder.com/150",
     "localidad": "Inverness, Escocia"
-  },
-  {
-    "nif": "4291671S4G",
-    "nombre": "Marton Spillman",
-    "foto": "https://via.placeholder.com/150",
-    "localidad": "Santorini, Grecia"
-  },
-  {
-    "nif": "12519334O",
-    "nombre": "Megane Dartos",
-    "foto": "https://via.placeholder.com/150",
-    "localidad": "Lisboa, Portugal"
   }
 ]

@@ -1,14 +1,19 @@
 import { Injectable } from '@nestjs/common';
+import { Repository } from 'typeorm';
+import { Usuario } from './entities/usuario.entity';
+import { InjectRepository } from '@nestjs/typeorm';
 // import { CreateUsuarioDto } from './dto/create-usuario.dto';
 
 @Injectable()
 export class UsuariosService {
-  // create(createUsuarioDto: CreateUsuarioDto) {
-  //   return 'This action adds a new usuario';
-  // }
+  constructor(
+    @InjectRepository(Usuario)
+    private readonly usuariosRepository: Repository<Usuario>,
+  ) {}
 
   findAll() {
-    return `This action returns all usuarios`;
+    const usuarios = this.usuariosRepository.find({});
+    return usuarios;
   }
 
   findOne(id: number) {

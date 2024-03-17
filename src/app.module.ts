@@ -9,7 +9,6 @@ import { LibrosModule } from './modulos/libros/libros.module';
 import { AuthModule } from './modulos/auth/auth.module';
 import { JwtStrategy } from './modulos/auth/strategies/jwt-strategy/jwt-strategy';
 import { CategoriasModule } from './modulos/categorias/categorias.module';
-import { TiendasModule } from './modulos/tiendas/tiendas.module';
 import { UsuariosModule } from './modulos/usuarios/usuarios.module';
 import { EditorialesModule } from './modulos/editoriales/editoriales.module';
 
@@ -32,7 +31,6 @@ import { EditorialesModule } from './modulos/editoriales/editoriales.module';
     LibrosModule,
     AuthModule,
     CategoriasModule,
-    TiendasModule,
     UsuariosModule,
     EditorialesModule,
   ],

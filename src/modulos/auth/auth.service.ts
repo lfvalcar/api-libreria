@@ -24,23 +24,31 @@ export class AuthService {
     // const { email, ...resto} = registerDto; // ... operador spread
     // return registerDto;
     if (await this.userRepository.findByEmail(registerDto.email)) {
-      throw new BadRequestException('El email existe en la Base de Datos');
+      throw new BadRequestException('email ya registrado');
       // ABORTA la función register y NO CONTINUA
     }
 
     if (await this.userRepository.findByUsername(registerDto.username)) {
-      throw new BadRequestException('El usuario existe en la Base de Datos');
+      throw new BadRequestException('usuario ya registrado');
       // ABORTA la función register y NO CONTINUA
     }
 
-    console.log('el email', registerDto.email, ' no existe en la BD');
-    console.log('el usuario', registerDto.username, ' no existe en la BD');
+    console.log('El email', registerDto.email, ' no existe en la BD');
+    console.log('El usuario', registerDto.username, ' no existe en la BD');
 
     try {
       registerDto.password = await this.getHash(registerDto.password);
-      return this.userRepository.save(registerDto);
+      await this.userRepository.save(registerDto);
+      const usuario = await this.userRepository.findByEmail(registerDto.email);
+      if (usuario) {
+        return {
+          msg: 'Usuario registrado',
+          status: 200,
+          user: usuario,
+        };
+      }
     } catch (error) {
-      throw new InternalServerErrorException('Erro al registrar');
+      throw new InternalServerErrorException('Error al registrar');
     }
   }
 
