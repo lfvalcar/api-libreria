@@ -55,6 +55,15 @@ export class LibrosService {
     return libros;
   }
 
+  async getNewsLibros() {
+    const libros = await this.librosRepository.find({
+      order: { publishedDate: 'DESC' }, // Ordena por fecha de publicación en orden descendente
+      take: 4, // Limita el resultado a los primeros 5 libros
+      relations: ['autor', 'categoria', 'editorial'], // Carga las relaciones autor, categoria y editorial
+    });
+    return libros;
+  }
+
   findOne(isbn: string) {
     const autor = this.librosRepository.findOne({
       where: {

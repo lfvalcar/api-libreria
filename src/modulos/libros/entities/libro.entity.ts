@@ -35,9 +35,9 @@ export class Libro {
   precio: number;
 
   @Column('date', {
-    nullable: true,
+    nullable: false,
   })
-  publishedDate?: string;
+  publishedDate: string;
 
   @Column('text', {
     nullable: true,

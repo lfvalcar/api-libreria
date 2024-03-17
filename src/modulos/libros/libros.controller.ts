@@ -18,6 +18,11 @@ export class LibrosController {
     return this.librosService.findAll();
   }
 
+  @Get('news')
+  getNewsLibros() {
+    return this.librosService.getNewsLibros();
+  }
+
   @Get(':id')
   findOne(@Param('id') isbn: string) {
     return this.librosService.findOne(isbn);

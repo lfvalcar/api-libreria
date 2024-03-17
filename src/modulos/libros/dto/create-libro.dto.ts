@@ -26,7 +26,7 @@ export class CreateLibroDto {
   precio: number;
 
   @IsString()
-  publishedDate?: string;
+  publishedDate: string;
 
   @IsString()
   @IsOptional()
