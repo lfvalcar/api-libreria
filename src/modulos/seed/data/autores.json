@@ -3,56 +3,49 @@
     "id": "1",
     "nif": "456563234X",
     "nombre": "Glen Smith",
-    "foto": "https://e00-expansion.uecdn.es/assets/multimedia/imagenes/2023/05/18/16844080053247.jpg",
+    "foto": "https://iaw-libreria-images.s3.amazonaws.com/Autores/16844080053247.jpg",
     "localidad": "Buenos Aires, Argentina"
   },
   {
     "id": "2",
     "nif": "42956434Y",
     "nombre": "Peter Ledbrook",
-    "foto": "https://e00-expansion.uecdn.es/assets/multimedia/imagenes/2022/06/02/16541575869160.jpg",
+    "foto": "https://iaw-libreria-images.s3.amazonaws.com/Autores/16541575869160.jpg",
     "localidad": "París, Francia"
   },
   {
     "id": "3",
     "nif": "34561812Z",
     "nombre": "Kyle Banker",
-    "foto": "https://e00-expansion.uecdn.es/assets/multimedia/imagenes/2022/06/02/16541582955181.jpg",
+    "foto": "https://iaw-libreria-images.s3.amazonaws.com/Autores/16541582955181.jpg",
     "localidad": "Nueva York, Estados Unidos"
   },
   {
     "id": "4",
     "nif": "72345678H",
     "nombre": "Michael J. Barlotta",
-    "foto": "https://e00-expansion.uecdn.es/assets/multimedia/imagenes/2023/05/18/16844080607527.jpg",
+    "foto": "https://iaw-libreria-images.s3.amazonaws.com/Autores/16844080607527.jpg",
     "localidad": "Oporto, Portugal"
   },
   {
     "id": "5",
     "nif": "456523234J",
     "nombre": "Alex Holmes",
-    "foto": "https://e00-expansion.uecdn.es/assets/multimedia/imagenes/2022/06/02/16541577846569.jpg",
+    "foto": "https://iaw-libreria-images.s3.amazonaws.com/Autores/16541577846569.jpg",
     "localidad": "Portland, Estados Unidos"
   },
   {
     "id": "6",
     "nif": "42056434L",
     "nombre": "Bradley Austin Davis",
-    "foto": "https://e00-expansion.uecdn.es/assets/multimedia/imagenes/2022/06/02/16541578484547.jpg",
+    "foto": "https://iaw-libreria-images.s3.amazonaws.com/Autores/16541578484547.jpg",
     "localidad": "Londres, Reino Unido"
   },
   {
     "id": "7",
     "nif": "34467813S",
     "nombre": "Karen Bryla",
-    "foto": "https://e00-expansion.uecdn.es/assets/multimedia/imagenes/2023/05/18/16844077595119.jpg",
+    "foto": "https://iaw-libreria-images.s3.amazonaws.com/Autores/16844077595119.jpg",
     "localidad": "Tokio, Japón"
-  },
-  {
-    "id": "8",
-    "nif": "10355698D",
-    "nombre": "Alex Benton",
-    "foto": "https://e00-expansion.uecdn.es/assets/multimedia/imagenes/2022/06/02/16541579048947.jpg",
-    "localidad": "Inverness, Escocia"
   }
 ]

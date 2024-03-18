@@ -36,10 +36,10 @@ export class EditorialesService {
     return editoriales;
   }
 
-  findOne(nombre: string) {
+  findOne(id: string) {
     const editorial = this.editorialRepository.findOne({
       where: {
-        nombre,
+        id,
       },
     });
     return editorial;

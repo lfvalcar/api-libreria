@@ -105,6 +105,18 @@ export class LibrosService {
     return libros;
   }
 
+  async findLibroByAutor(@Param('id') id: string) {
+    const libros = await this.librosRepository.find({
+      where: {
+        autor: {
+          id: Like(`${id}`),
+        },
+      },
+      relations: ['autor', 'categoria', 'editorial'],
+    } as FindOneOptions<Libro>);
+    return libros;
+  }
+
   async deleteAllLibros() {
     const query = this.librosRepository.createQueryBuilder('libro');
     try {

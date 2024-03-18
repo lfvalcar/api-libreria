@@ -12,7 +12,7 @@ export class UsuariosService {
   ) {}
 
   findAll() {
-    const usuarios = this.usuariosRepository.find({});
+    const usuarios = this.usuariosRepository.find();
     return usuarios;
   }
 

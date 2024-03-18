@@ -37,4 +37,9 @@ export class LibrosController {
   getLibrosByEditorial(@Param('id') id: string) {
     return this.librosService.findLibroByEditorial(id);
   }
+
+  @Get('autores/:id')
+  getLibrosByAutor(@Param('id') id: string) {
+    return this.librosService.findLibroByAutor(id);
+  }
 }

@@ -7,7 +7,7 @@ import { Libro } from '../../libros/entities/libro.entity';
 export class Editorial {
   @PrimaryColumn()
   id: string;
-  
+
   @Column()
   nombre: string;
 

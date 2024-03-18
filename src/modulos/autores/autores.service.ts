@@ -40,10 +40,10 @@ export class AutoresService {
     return autores;
   }
 
-  findOne(nif: string) {
+  findOne(id: string) {
     const autor = this.autorRepository.findOne({
       where: {
-        nif,
+        id,
       },
     });
     return autor;

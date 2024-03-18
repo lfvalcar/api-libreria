@@ -1,51 +1,50 @@
 [
-    {
+  {
+      "id": "PRHM001",
       "nombre": "Penguin Random House Mondadori",
       "localidad": "Barcelona, España",
       "telefono": "123-456-789",
       "sitioweb": "https://www.la-biblioteca.com/",
-      "imagen": "https://via.placeholder.com/150"
-    },
-    {
+      "imagen": "https://iaw-libreria-images.s3.amazonaws.com/Editoriales/logo-penguin-random-house-grupo.jpg"
+  },
+  {
+      "id": "GPLA002",
       "nombre": "Grupo Planeta",
       "localidad": "Barcelona, España",
       "telefono": "987-654-321",
       "sitioweb": "https://www.libros-de-paris.com/",
-      "imagen": "https://via.placeholder.com/150"
-    },
-    {
+      "imagen": "https://iaw-libreria-images.s3.amazonaws.com/Editoriales/logo-planeta.jpg"
+  },
+  {
+      "id": "RBAE003",
       "nombre": "RBA Editorial",
       "localidad": "Cataluña, España",
       "telefono": "456-789-123",
       "sitioweb": "https://www.new-york-books.com/",
-      "imagen": "https://via.placeholder.com/150"
-    },
-    {
+      "imagen": "https://iaw-libreria-images.s3.amazonaws.com/Editoriales/logo-rba-editorial.jpg"
+  },
+  {
+      "id": "EDEL004",
       "nombre": "Edelvives Editorial",
       "localidad": "Madrid, España",
       "telefono": "789-123-456",
       "sitioweb": "https://www.libreria-porto.pt/",
-      "imagen": "https://via.placeholder.com/150"
-    },
-    {
+      "imagen": "https://iaw-libreria-images.s3.amazonaws.com/Editoriales/logo-ed-edelvives.jpg"
+  },
+  {
+      "id": "EDUR005",
       "nombre": "Ediciones Urano",
       "localidad": "Barcelona, España",
       "telefono": "345-678-912",
       "sitioweb": "https://www.powells-bookstore.com/",
-      "imagen": "https://via.placeholder.com/150"
-    },
-    {
+      "imagen": "https://iaw-libreria-images.s3.amazonaws.com/Editoriales/logo-ediciones-urano.jpg"
+  },
+  {
+      "id": "GRAN006",
       "nombre": "Grupo Anaya",
       "localidad": "Madrid, España",
       "telefono": "876-543-219",
       "sitioweb": "https://www.book-emporium.co.uk/",
-      "imagen": "https://via.placeholder.com/150"
-    },
-    {
-      "nombre": "Roca Editorial",
-      "localidad": "Barcelona, España",
-      "telefono": "654-321-987",
-      "sitioweb": "https://www.tokyo-bookstore.jp/",
-      "imagen": "https://via.placeholder.com/150"
+      "imagen": "https://iaw-libreria-images.s3.amazonaws.com/Editoriales/logo-grupo-anaya.jpg"
   }
 ]
