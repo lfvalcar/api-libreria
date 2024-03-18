@@ -3,31 +3,31 @@
         "cod": "C001",
         "name": "Ficción Contemporánea",
         "descripcion": "Colección de novelas de ficción escritas en el siglo XXI.",
-        "logo": "fiction.jpg"
+        "logo": "https://iaw-libreria-images.s3.amazonaws.com/Categorias/fiction.jpg"
     },
     {
         "cod": "C002",
         "name": "Ciencia Ficción",
         "descripcion": "Libros que exploran mundos imaginarios y tecnologías futuristas.",
-        "logo": "scifi.jpg"
+        "logo": "https://iaw-libreria-images.s3.amazonaws.com/Categorias/scifi.jpeg"
     },
     {
         "cod": "C003",
         "name": "Historia Antigua",
         "descripcion": "Obras que narran eventos y civilizaciones de la antigüedad.",
-        "logo": "history.jpg"
+        "logo": "https://iaw-libreria-images.s3.amazonaws.com/Categorias/history.jpg"
     },
     {
         "cod": "C004",
         "name": "Fantasía Épica",
         "descripcion": "Relatos de magia, héroes y mundos fantásticos.",
-        "logo": "fantasy.jpg"
+        "logo": "https://iaw-libreria-images.s3.amazonaws.com/Categorias/fantasy.jpg"
     },
     {
         "cod": "C005",
         "name": "Poesía Clásica",
         "descripcion": "Colección de poemas de los grandes autores de la literatura clásica.",
-        "logo": "poetry.jpg"
+        "logo": "https://iaw-libreria-images.s3.amazonaws.com/Categorias/poetry.jpg"
     }
     
 ]
