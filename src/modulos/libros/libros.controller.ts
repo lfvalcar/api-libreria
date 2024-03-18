@@ -32,4 +32,9 @@ export class LibrosController {
   getLibrosByCategoria(@Param('cod') cod: string) {
     return this.librosService.findLibroByCategoria(cod);
   }
+
+  @Get('editoriales/:id')
+  getLibrosByEditorial(@Param('id') id: string) {
+    return this.librosService.findLibroByEditorial(id);
+  }
 }
